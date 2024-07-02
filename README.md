@@ -22,7 +22,8 @@ will be updated...<br>
 my deep learning projects contains implementing MLP on [EMNIST dataset](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/EMNIST.ipynb) and [Fashion MNIST](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Fashion%20MNIST.ipynb).<br>
 <br>
 will be updated...<br>
-## [Recommender Systems](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Recommender%20Systems.ipynb)<br>
+## Recommender Systems<br>
+#### [Movies Dataset](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Recommender%20Systems.ipynb)
 in this project I implemented a recommender system for movies dataset.<br>
 i used content based filtering and collaborative filtering methods such as KNN and [SVD](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Recommender%20System%20SVDipynb.ipynb) matrix factorization.<br>
 <br>
