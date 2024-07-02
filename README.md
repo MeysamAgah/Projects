@@ -38,5 +38,9 @@ this project is about implementing GNN for regression on ESOL dataset which is a
 <br>
 this will be updated...<br>
 <br>
-#### Big Data<br>
-## Credit Card Fraud Detection<br>
+## Big Data<br>
+#### [Credit Card Fraud Detection](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Credit%20Card%20Fraud%20Detection.ipynb)<br>
+in this project I used Pyspark to implement Machine Learning models on credit card fraud detection dataset.<br>
+<br>
+this will be updated...<br>
+<br>
