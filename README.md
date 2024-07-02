@@ -17,14 +17,23 @@ This project consist of three steps:<br>
 first Exploratory Data Analysis, second imputing missing values using machine learning models, and finally hyperparameter tuning on different ML models and choosing best one.<br>
 <br>
 will be updated...<br>
-
+<br>
 ## Deep Learning<br>
 my deep learning projects contains implementing MLP on [EMNIST dataset](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/EMNIST.ipynb) and [Fashion MNIST](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Fashion%20MNIST.ipynb).<br>
 <br>
 will be updated...<br>
+<br>
 ## Recommender Systems<br>
 #### [Movies Dataset](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Recommender%20Systems.ipynb)
 in this project I implemented a recommender system for movies dataset.<br>
 i used content based filtering and collaborative filtering methods such as KNN and [SVD](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Recommender%20System%20SVDipynb.ipynb) matrix factorization.<br>
 <br>
 this will be updated...<br>
+<br>
+## Graph Neural Network<br>
+#### [HIV](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/GNN%20Classification.ipynb)<br>
+this project is about implementing GNN for classification on HIV datasets which was introduced by the Drug Therapeutics Program (DTP) AIDS Antiviral Screen, which tested the ability to inhibit HIV replication for over 40000 compounds utilizing NetworkX and DGL libraries.<br>
+#### [ESOL](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/GNN%20Regression.ipynb)<br>
+this project is about implementing GNN for regression on ESOL dataset which is a small dataset consisting of water solubility data for some compounds.<br>
+<br>
+this will be updated<br>
