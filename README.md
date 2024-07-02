@@ -37,3 +37,6 @@ this project is about implementing GNN for classification on HIV datasets which 
 this project is about implementing GNN for regression on ESOL dataset which is a small dataset consisting of water solubility data for some compounds.<br>
 <br>
 this will be updated...<br>
+<br>
+#### Big Data<br>
+## Credit Card Fraud Detection<br>
