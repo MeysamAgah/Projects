@@ -14,4 +14,12 @@ For [SuperMarket Dataset](https://github.com/MeysamAgah/Machine-Learning-Project
 contains EDA, Dimension reduction, Clustering.
 #### Spaceship Titanic<br>
 This [project](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Spaceship_Titanic.ipynb) consist of three steps:<br>
-first Exploratory Data Analysis, second imputing missing values using machine learning models, and finally hyperparameter tuning on different ML models and choosing best one.
+first Exploratory Data Analysis, second imputing missing values using machine learning models, and finally hyperparameter tuning on different ML models and choosing best one.<br>
+<br>
+will be updated...<br>
+
+## Deep Learning<br>
+my deep learning projects contains implementing MLP on [EMNIST dataset](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/EMNIST.ipynb) and [Fashion MNIST](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Fashion%20MNIST.ipynb).<br>
+<br>
+will be updated...<br>
+## Recommender Systems<br>
