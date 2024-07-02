@@ -36,4 +36,4 @@ this project is about implementing GNN for classification on HIV datasets which 
 #### [ESOL](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/GNN%20Regression.ipynb)<br>
 this project is about implementing GNN for regression on ESOL dataset which is a small dataset consisting of water solubility data for some compounds.<br>
 <br>
-this will be updated<br>
+this will be updated...<br>
