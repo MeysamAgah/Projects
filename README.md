@@ -1,4 +1,4 @@
-# Machine-Learning-Projects
+# Projects
 In this Repository you can find my Machine Learning and Data Science Projects<br>
 ## Traditional Machine Learning<br>
 #### Linear Regression<br>
