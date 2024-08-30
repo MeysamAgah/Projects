@@ -1,5 +1,5 @@
 # Projects
-In this Repository you can find my Machine Learning and Data Science Projects<br>
+In this Repository you can find my Data Science Projects<br>
 ## Traditional Machine Learning<br>
 #### Linear Regression<br>
 in these projects I implemented a Linear Regression model [from scratch](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Linear%20Regression%20from%20scratch.ipynb) and using [normal equation](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Linear%20Regression%20By%20Using%20Normal%20Equation.ipynb).<br>
