@@ -33,7 +33,7 @@ this will be updated...<br>
 this will be updated...<br>
 <br>
 ## NLP<br>
-#### Snappfood sentiment analysis 
+#### [Snappfood sentiment analysis](https://github.com/MeysamAgah/Projects/blob/main/SnappFood_sentiment_analysis.ipynb)
 <br>
 
 **preprocessing, logistic regression, sentiment analysis** 
