@@ -35,7 +35,9 @@ this will be updated...<br>
 ## NLP<br>
 #### Snappfood sentiment analysis 
 <br>
-**preprocessing, logistic regression, sentiment analysis**
+**preprocessing, logistic regression, sentiment analysis** 
+<br>
+
 ## Big Data<br>
 #### [Credit Card Fraud Detection](https://github.com/MeysamAgah/Machine-Learning-Projects/blob/main/Credit%20Card%20Fraud%20Detection.ipynb)<br>
 **Pyspark, Machine Learning, Fraud Detection, Hyperparameter Tuning**.<br>
