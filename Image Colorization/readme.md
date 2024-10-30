@@ -59,4 +59,6 @@ The output layer utilizes a sigmoid activation function to produce pixel values 
 ![output3](https://github.com/user-attachments/assets/f6ae99b3-8ccc-4891-86e5-f0b0dd4ebdfe)
 
 ## Conclusion <br>
-The project successfully demonstrates the ability to utilize deep learning techniques for image colorization. The developed autoencoder effectively learns the mapping from grayscale to color images, enabling the transformation of grayscale images into visually appealing colorized versions. This application has potential uses in various fields such as photography restoration, artistic applications, and enhancing visual content.
+The project successfully demonstrates the ability to utilize deep learning techniques for image colorization. The developed autoencoder effectively learns the mapping from grayscale to color images, enabling the transformation of grayscale images into visually appealing colorized versions. This application has potential uses in various fields such as photography restoration, artistic applications, and enhancing visual content.<br>
+
+Note: The low quality of the colorized images was due to hardware limitations and the use of low-resolution training images. For future projects, I'll address this by using higher-quality images and more advanced models to improve results.
