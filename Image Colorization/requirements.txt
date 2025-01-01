@@ -1,3 +1,4 @@
 OpenCV == 4.10.0
 NumPy == 1.26.4
 TensorFlow == 2.16.1
+matplotlib == 3.9.2
