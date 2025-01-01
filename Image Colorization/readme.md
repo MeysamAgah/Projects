@@ -1,64 +1,55 @@
 # Image Colorization<br>
 ## Overview <br>
-This project aims to develop a deep learning model that can automatically colorize grayscale images. Utilizing an autoencoder architecture, the model learns to map grayscale images to their corresponding colored versions. The project leverages the TensorFlow framework for model building and training, and OpenCV for image processing.
-## Objectives <br>
-- To create an autoencoder neural network that can transform grayscale images into color images. <br>
-- To train the model using a dataset of color images and their grayscale counterparts. <br>
-- To evaluate the model's performance by comparing the colorized images with the original colored images. <br>
-- To provide a user-friendly interface for colorizing new grayscale images from both local directories and URLs. <br>
+This project aims to develop a deep learning model that can automatically colorize grayscale images. Utilizing a Generative Adversarial Network (GAN) architecture, the model employs a generator to predict the colored version of grayscale images and a discriminator to evaluate the realism of the generated outputs. The project leverages the TensorFlow framework for model building and training, and OpenCV for image processing.
 ## Dataset <br>
-The dataset used for training consists of [landscape images](https://www.kaggle.com/datasets/theblackmamba31/landscape-image-colorization) that are divided into two categories: <br>
-- Color Images: Original colored images used for training the model.<br>
-- Grayscale Images: Grayscale versions of the colored images used as input for the model.<br>
-The images are resized to a uniform dimension of 480x480 pixels to ensure consistency during model training. <br>
+For training, multiple image datasets from Kaggle were utilized. These include 20,000 random sample images from the [Flickr-Faces-HQ (FFHQ)](https://www.kaggle.com/datasets/arnaud58/flickrfaceshq-dataset-ffhq) Dataset, the [Landscape Pictures](https://www.kaggle.com/datasets/arnaud58/landscape-pictures) Dataset, and the [Image Colorization](https://www.kaggle.com/datasets/mariomatos/image-colorization) Dataset.
 ## Methodology <br>
-**1- Data Preprocessing:** <br>
-- Images are loaded from specified directories.<br>
-- Color images are converted to float32 format and normalized to a range between 0 and 1.<br>
-- Grayscale images are also converted to float32 format, normalized, and expanded to include a channel dimension.<br>
+**LAB channel:** <br>
+The Lab color space is preferred over RGB for this project due to its perceptual advantages and the simplified nature of the prediction task. The Lab space separates luminance (lightness) information from chrominance (color) information. This separation allows the model to focus on predicting only the color components ('a' and 'b' channels) while retaining the luminance channel ('L') directly from the grayscale input.
 
-**2- Model Architecture:** <br>
-<br>
- ![autoencoder](https://github.com/user-attachments/assets/a6f9aa3f-d284-42e7-aa1b-7c48747f660b)
+One of the key benefits of using Lab is its perceptual uniformity. In Lab, changes in color values correspond more closely to perceived changes in color by the human eye, making it easier for the model to generate colorized images that look realistic and natural. This is especially important in colorization tasks where visual coherence and accuracy are crucial.
 
- An autoencoder is built with the following layers: <br>
-- Encoder: Comprised of several convolutional layers followed by max pooling layers that downsample the input image. <br>
-- Bottleneck: The most compressed representation of the input image. <br>
-- Decoder: A series of transposed convolutional layers and upsampling layers that reconstruct the image to its original size. <br>
-
-The output layer utilizes a sigmoid activation function to produce pixel values in the range of 0 to 1. <br>
-
-**3- Training the Model:** <br>
-- The model is compiled with the Adam optimizer and trained using the mean squared error loss function.<br>
-- The training process involves fitting the model on the grayscale images with their corresponding color images as targets, over a specified number of epochs.<br>
-
-**4- Image Colorization:** <br>
-- A function is implemented to colorize any grayscale image by resizing it to the target size and predicting the colorized output using the trained model.
-- The resulting colorized image is post-processed and displayed.
-
-**5- Evaluation:** <br>
-- The model's performance is evaluated by colorizing a set of test grayscale images and comparing the results with the original colored images.
-- Visualization is used to present side-by-side comparisons of the original grayscale images, the original color images, and the generated colorized images.
-
-**6- Online Image Colorization:** <br>
-
-- Additional functionality is implemented to colorize images directly from URLs, making the application more versatile.
-
+Additionally, by predicting only the chrominance channels ('a' and 'b'), the model's task is simplified compared to predicting all three RGB channels. This results in a more efficient learning process, as the model can focus on generating the color information while maintaining the luminance structure of the image, which is already provided by the grayscale input.<br>
+**GAN:** <br> 
+A Generative Adversarial Network (GAN) is a type of deep learning model composed of two neural networks: a generator and a discriminator. These networks work in opposition to each other, which is why it's called "adversarial."
+The generator creates synthetic data (in this case, colorized images) from random noise or input data (grayscale images).
+The discriminator evaluates the authenticity of the generated data, distinguishing between real images (from the training set) and fake images (produced by the generator).<br>
+The generator and discriminator are trained simultaneously in a game-like process, where the generator tries to improve its ability to create realistic images, and the discriminator tries to get better at identifying fake images. Over time, this adversarial training helps the generator produce highly realistic outputs that are indistinguishable from real data.<br>
+Why Use GANs for Image Colorization?<br>
+In this project, GANs are used for image colorization because of their ability to generate high-quality, realistic images. Traditional approaches, such as autoencoders, focus on learning a compressed representation of the input, but they may struggle with generating detailed, realistic colors. GANs, on the other hand, are well-suited for this task as they learn to generate data that closely resembles real-world images by refining their outputs through adversarial feedback.<br>
+The use of GANs helps in producing more vibrant and natural-looking colorized images. By employing both the generator and discriminator, GANs ensure that the generated colors are not only plausible but also consistent with real-world color distributions. This makes GANs a powerful tool for tasks such as image colorization, where the goal is to generate high-quality, perceptually accurate colors.
+**Generator:** <br>
+**Discriminator:** <br>
+**Optimizers:** <br>
+Two Adam optimizers are used, one for the generator and another for the discriminator:<br>
+Both optimizers use a learning rate of 2e-4 and The beta_1 parameter is set to 0.5.<br>
+**Loss Functions:** <br>
+Generator Loss:<br>
+$`
+\mathcal{L}_{\text{gen}} = \mathcal{L}_{\text{GAN}} + 100 \cdot \mathcal{L}_1
+`$
+<br> Where:<br>
+$`
+\mathcal{L}_{\text{GAN}} = - \mathbb{E}[\log D(G(z))]
+`$
+<br> and <br>
+$`
+\mathcal{L}_1 = \frac{1}{N} \sum_{i=1}^{N} |x_i - \hat{x}_i|
+`$
+<br> Discriminator Loss:<br>
+$`
+\mathcal{L}_{\text{disc}} = \mathcal{L}_{\text{real}} + \mathcal{L}_{\text{fake}}
+`$
+<br> Where: <br>
+$`
+\mathcal{L}_{\text{real}} = - \mathbb{E}[\log D(x)]
+`$
+<br> and <br>
+$`
+\mathcal{L}_{\text{fake}} = - \mathbb{E}[\log (1 - D(G(z)))]
+`$
 ## Results <br>
-- The colorization results are evaluated visually by displaying original grayscale images alongside their colorized counterparts.<br>
-![test1](https://github.com/user-attachments/assets/79bb4108-148f-4c84-82dd-1913411e6db4)
-![test2](https://github.com/user-attachments/assets/d92257f0-6f2c-4f50-9694-7fda4052f2ab)
-![test3](https://github.com/user-attachments/assets/ca38c133-fa14-4e2f-ab69-b2d0f97832fa)
-![test4](https://github.com/user-attachments/assets/6f3e0811-8410-49c9-bd72-d37d7c7b6c15)
-![test5](https://github.com/user-attachments/assets/72dd4137-0539-4ec7-a715-040f98a819a8)
-![test6](https://github.com/user-attachments/assets/32fae89b-af73-4216-9131-23b921533121)
-
-- The model's performance is assessed based on how accurately the colorization resembles the original grayscale images.<br>
-![output1](https://github.com/user-attachments/assets/373ba8e7-a663-48ef-9607-d97597fbeb8e)
-![output2](https://github.com/user-attachments/assets/8043960e-ceeb-483f-946a-2893d752119a)
-![output3](https://github.com/user-attachments/assets/f6ae99b3-8ccc-4891-86e5-f0b0dd4ebdfe)
-
+**Sample output on training:** <br>
+**Sample output on new images:** <br>
 ## Conclusion <br>
-The project successfully demonstrates the ability to utilize deep learning techniques for image colorization. The developed autoencoder effectively learns the mapping from grayscale to color images, enabling the transformation of grayscale images into visually appealing colorized versions. This application has potential uses in various fields such as photography restoration, artistic applications, and enhancing visual content.<br>
-
-Note: The low quality of the colorized images was due to hardware limitations and the use of low-resolution training images. For future projects, I'll address this by using higher-quality images and more advanced models to improve results.
+The project successfully demonstrates the capability of leveraging Generative Adversarial Networks (GANs) for image colorization. The GAN architecture effectively learns to generate realistic and visually appealing colorized images from grayscale inputs by combining the strengths of a generator and discriminator. This approach holds potential for applications in fields such as photography restoration, artistic enhancements, and visual content creation.
