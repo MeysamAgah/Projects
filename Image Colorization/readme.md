@@ -17,9 +17,7 @@ The discriminator evaluates the authenticity of the generated data, distinguishi
 The generator and discriminator are trained simultaneously in a game-like process, where the generator tries to improve its ability to create realistic images, and the discriminator tries to get better at identifying fake images. Over time, this adversarial training helps the generator produce highly realistic outputs that are indistinguishable from real data.<br>
 Why Use GANs for Image Colorization?<br>
 In this project, GANs are used for image colorization because of their ability to generate high-quality, realistic images. Traditional approaches, such as autoencoders, focus on learning a compressed representation of the input, but they may struggle with generating detailed, realistic colors. GANs, on the other hand, are well-suited for this task as they learn to generate data that closely resembles real-world images by refining their outputs through adversarial feedback.<br>
-The use of GANs helps in producing more vibrant and natural-looking colorized images. By employing both the generator and discriminator, GANs ensure that the generated colors are not only plausible but also consistent with real-world color distributions. This makes GANs a powerful tool for tasks such as image colorization, where the goal is to generate high-quality, perceptually accurate colors.
-**Generator:** <br>
-**Discriminator:** <br>
+The use of GANs helps in producing more vibrant and natural-looking colorized images. By employing both the generator and discriminator, GANs ensure that the generated colors are not only plausible but also consistent with real-world color distributions. This makes GANs a powerful tool for tasks such as image colorization, where the goal is to generate high-quality, perceptually accurate colors.<br>
 **Optimizers:** <br>
 Two Adam optimizers are used, one for the generator and another for the discriminator:<br>
 Both optimizers use a learning rate of 2e-4 and The beta_1 parameter is set to 0.5.<br>
