@@ -48,6 +48,30 @@ $`
 `$
 ## Results <br>
 **Sample output on training:** <br>
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-30-28.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-30-30.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-30-32.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-30-38.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-30-54.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-30-56.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-31-07.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-31-15.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-39-48.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-39-50.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-40-03.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-40-05.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-40-15.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-40-25.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Train%20outputs/2025-01-01_11-40-27.png)
 **Sample output on new images:** <br>
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Test%20outputs/2025-01-01_11-48-34.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Test%20outputs/2025-01-01_11-48-46.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Test%20outputs/2025-01-01_11-48-49.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Test%20outputs/2025-01-01_11-49-15.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Test%20outputs/2025-01-01_11-49-23.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Test%20outputs/2025-01-01_11-49-41.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Test%20outputs/2025-01-01_13-07-04.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Test%20outputs/2025-01-01_13-07-20.png)
+![](https://raw.githubusercontent.com/MeysamAgah/Projects/refs/heads/main/Image%20Colorization/Test%20outputs/2025-01-01_13-07-28.png)
 ## Conclusion <br>
 The project successfully demonstrates the capability of leveraging Generative Adversarial Networks (GANs) for image colorization. The GAN architecture effectively learns to generate realistic and visually appealing colorized images from grayscale inputs by combining the strengths of a generator and discriminator. This approach holds potential for applications in fields such as photography restoration, artistic enhancements, and visual content creation.
