@@ -83,9 +83,12 @@ def scrape_metacritic(platform,
 
       try:
         review_texts.append(e.find_element(By.CLASS_NAME, "c-siteReview_quote").text)
-        reviewers.append(e.find_element(By.CLASS_NAME, "c-siteReviewHeader_username").text)
-        review_dates.append(datetime.strptime(e.find_element(By.CLASS_NAME, "c-siteReviewHeader_reviewDate").text, "%b %d, %Y").date())
-        ratings.append(e.find_element(By.CLASS_NAME, "c-siteReviewHeader_reviewScore").text)
+        if reviewer == "user":
+          reviewers.append(e.find_element(By.CLASS_NAME, "c-siteReviewHeader_username").text)
+        elif reviewer == "critic":
+          reviewers.append(e.find_element(By.CLASS_NAME, "c-siteReviewHeader_publicationName").text)
+        review_dates.append(datetime.strptime(e.find_element(By.CLASS_NAME, "c-siteReviewHeader_reviewDate").text, "%b %d, %Y").date()) 
+        ratings.append(e.find_element(By.CLASS_NAME, "c-siteReviewHeader_reviewScore").text) 
         platforms.append(e.find_element(By.CLASS_NAME, "c-siteReview_platform").text)
       except Exception as ex:
         print(f"Error extracting review data: {ex}")
