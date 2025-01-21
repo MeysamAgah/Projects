@@ -122,9 +122,11 @@ elden_ring_reviewers = ['user', 'critic'] # desired reviewers
 # update and filling dataframe
 for p in elden_ring_platforms:
   for r in elden_ring_reviewers:
-    df_temp = scrape_metacritic(p, r, num_comments=float('inf')) #all comments for each webpage will be scraped
-    df = pd.concat([df, df_temp])
-    print(f"data for {r}s of {p} collected")
-
+    try:
+      df_temp = scrape_metacritic(p, r, num_comments=float('inf')) #all comments for each webpage will be scraped
+      df = pd.concat([df, df_temp])
+      print(f"data for {r}s of {p} collected")
+    except Exception as ex:
+      print(f"Error extracting review data: {ex}")
 # save dataframe as a .csv file
 df.to_csv('Elden_Ring_metacritic_reviews.csv', index=False)
