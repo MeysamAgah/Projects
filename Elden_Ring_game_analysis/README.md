@@ -10,4 +10,5 @@ For this project, data was collected from multiple sources to provide a comprehe
 <br>
 Additionally, supplementary statistics such as playtime and game difficulty were gathered from GameFAQs, a well-known repository for game guides, FAQs, and user-submitted content. These data points were extracted using Selenium, a powerful web scraping library that automates browser interactions for dynamic content extraction.
 <br>
-Last but not least, important metrics related to player activity, including the number of concurrent players and real-time viewer counts, were manually downloaded from SteamDB, a platform that tracks game statistics on Steam. Together, these data sources offer a rich foundation for analyzing game performance, user engagement, and sentiment trends.
+Last but not least, important metrics related to player activity, including the number of concurrent players and real-time viewer counts, were manually downloaded from SteamDB, a platform that tracks game statistics on Steam. Together, these data sources offer a rich foundation for analyzing game performance, user engagement, and sentiment trends. <br>
+Further information about data used in this survey follow this [link](https://github.com/MeysamAgah/Projects/blob/main/Elden_Ring_game_analysis/Data/README.md) to data folder readme
