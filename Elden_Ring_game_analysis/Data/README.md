@@ -13,5 +13,7 @@ number of game players according to time <br>
 number of positive or negative reviews according to time <br>
 **twich_views:**
 <br>
-number of twich viewers of game according to time
+number of twich viewers of game according to time <br>
+**Elden_Ring_metacritic_reviews:**
 <br>
+metacritic reviews containing whether review is by user or critic, date of review, reviewer username or publisher name, review text and review score(for users are in scale of 0-10 and for critic in scale of 0-100) <br>
