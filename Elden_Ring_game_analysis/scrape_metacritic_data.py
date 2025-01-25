@@ -110,6 +110,67 @@ def scrape_metacritic(platform,
 
   return df
 
+def scrape_gamefaq(game='elden-ring',
+                   user_agent_string = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'):
+  url = f"https://www.metacritic.com/game/{game}/"
+  driver = web_driver(user_agent_string)
+  driver.get(url)
+  time.sleep(5)
+
+  # ratings dataframe
+  total_ratings = [e.split(',')[0] for e in str(driver.page_source).split(";k.footer")[0].split("ratings:")[1].split(',play_time:')[0].split('total:')[1:]]
+  game_rating_ids1 = [e.split(',')[0] for e in str(driver.page_source).split(";k.footer")[0].split("ratings:")[1].split(',play_time:')[0].split('game_rating_id:')[1:]]
+  game_rating_labels = [e.split(',')[0][1:-2] for e in str(driver.page_source).split(";k.footer")[0].split("ratings:")[1].split(',play_time:')[0].split('label:')[1:]]
+
+  df_ratings_stats = pd.DataFrame(
+      {
+          'total_ratings': total_ratings,
+          'game_rating_ids': game_rating_ids1,
+          'game_rating_labels': game_rating_labels
+      }
+  )
+
+  # play time dataframe
+  total_playtime = [e.split(',')[0] for e in str(driver.page_source).split(";k.footer")[0].split("play_time:[")[1].split(',difficulty:')[0].split('total:')[1:]]
+  playtime_hour = [e.split('label:"')[1].replace("\\u003C ", '<').replace("\\u003E= ", '>') for e in str(driver.page_source).split(";k.footer")[0].split("play_time:[")[1].split(',difficulty:')[0].split(" Hour")[:-1]]
+  playtime_id = [e.split('}')[0] for e in str(driver.page_source).split(";k.footer")[0].split("play_time:[")[1].split(',difficulty:')[0].split("play_time:")[1:]]
+
+  df_playtime_stats = pd.DataFrame(
+      {
+          'total_playtime': total_playtime,
+          'playtime_hour': playtime_hour,
+          'playtime_id': playtime_id
+      }
+  )
+
+  # difficulty dataframe
+  total_difficulty = [e.split(',')[0] for e in str(driver.page_source).split(";k.footer")[0].split("play_time:[")[1].split(',difficulty:[')[1].split("play_status:[")[0].split('total:')[1:]]
+  label_difficulty = [e.split(',')[0][1:-1] for e in str(driver.page_source).split(";k.footer")[0].split("play_time:[")[1].split(',difficulty:[')[1].split("play_status:[")[0].split('label:')[1:]]
+  difficulty_id = [e.split('}')[0] for e in str(driver.page_source).split(";k.footer")[0].split("play_time:[")[1].split(',difficulty:[')[1].split("play_status:[")[0].split('difficulty_id:')[1:]]
+
+  df_difficulty = pd.DataFrame(
+      {
+          'total_difficulty': total_difficulty,
+          'label_difficulty': label_difficulty,
+          'difficulty_id': difficulty_id
+      }
+  )
+
+  # play_status dataframe
+  total_play_status = [e.split(',')[0] for e in str(driver.page_source).split(";k.footer")[0].split("play_time:[")[1].split("play_status:[")[1].split('label:')[1:]]
+  label_play_status = [e.split(',')[0] for e in str(driver.page_source).split(";k.footer")[0].split("play_time:[")[1].split("play_status:[")[1].split('total:')[1:]]
+  play_status_id = [e.split('}')[0] for e in str(driver.page_source).split(";k.footer")[0].split("play_time:[")[1].split("play_status:[")[1].split('play_status_id:')[1:]]
+
+  df_play_status = pd.DataFrame(
+      {
+          'total_play_status': total_play_status,
+          'label_play_status': label_play_status,
+          'play_status_id': play_status_id
+      }
+  )
+  driver.quit()
+  return df_ratings_stats, df_playtime_stats, df_difficulty, df_play_status
+
 # initializing with an empty dataframe
 df = pd.DataFrame(
     columns=['reviewer', 'review_text', 'rating', 'review_date', 'platform', 'reviewer_type']
@@ -130,3 +191,8 @@ for p in elden_ring_platforms:
       print(f"Error extracting review data: {ex}")
 # save dataframe as a .csv file
 df.to_csv('Elden_Ring_metacritic_reviews.csv', index=False)
+
+desired_data = ['df_ratings_stats', 'df_playtime_stats', 'df_difficulty', 'df_play_status']
+faq_data = scrape_gamefaq()
+for i in range(len(desired_data)):
+  faq_data[i].to_csv(f'faq_{desired_data[i][3:]}.csv', index=False)
