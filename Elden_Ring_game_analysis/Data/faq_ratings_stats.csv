@@ -1,0 +1,11 @@
+total_ratings,game_rating_ids,game_rating_labels
+26,1,Unplayable
+4,2,Terrible
+4,3,Bad
+4,4,Poor
+7,5,Playable
+21,6,Fair
+40,7,Good
+77,8,Great
+219,9,Outstanding
+358,10,"Flawless"""
