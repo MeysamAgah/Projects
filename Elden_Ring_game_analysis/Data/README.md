@@ -17,3 +17,14 @@ number of twich viewers of game according to time <br>
 **Elden_Ring_metacritic_reviews:**
 <br>
 metacritic reviews containing whether review is by user or critic, date of review, reviewer username or publisher name, review text and review score(for users are in scale of 0-10 and for critic in scale of 0-100) <br>
+**faq_difficulty:**
+<br>
+represents number of votes for each difficulty level.<br>
+**faq_play_status:**
+<br>
+represents number of players in each playing status categories. <br>
+**faq_playtime_stats:**
+<br>
+represents number of players in each playtie section <br>
+**faq_ratings:**
+represents number of players according to ratings
