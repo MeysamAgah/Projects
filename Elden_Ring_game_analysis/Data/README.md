@@ -17,6 +17,9 @@ number of twich viewers of game according to time <br>
 **Elden_Ring_metacritic_reviews:**
 <br>
 metacritic reviews containing whether review is by user or critic, date of review, reviewer username or publisher name, review text and review score(for users are in scale of 0-10 and for critic in scale of 0-100) <br>
+**Elden_Ring_metacritic_reviews_cleaned:**
+<br>
+cleaned version of previously Elden_Ring_metacritic_reviews <br>
 **faq_difficulty:**
 <br>
 represents number of votes for each difficulty level.<br>
@@ -41,4 +44,7 @@ playtime data of players for multiplayer <br>
 **retirement_reasons:**
 <br>
 reviews of players about their reasons to drop game <br>
+**retirement_reasons:**
+<br>
+cleaned version of previously retirement_reasons <br>
  
