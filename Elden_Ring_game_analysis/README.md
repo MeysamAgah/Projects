@@ -8,6 +8,8 @@ This project aims to perform sentiment analysis on game reviews using pre-traine
 # Data Collection
 For this project, data was collected from multiple sources to provide a comprehensive analysis. User and critic reviews were obtained from Metacritic, a popular website known for aggregating reviews of games, movies, and other media, providing scores from both professional critics and general users. This platform serves as a key resource for evaluating public sentiment and critical reception.
 <br>
+Furthermore, some data about details on how much elden ring was played gathered from [howlongtobeat.com](https://howlongtobeat.com). this data contains some tabular playtime data and some comments from players who dropped the game early.
+<br>
 Additionally, supplementary statistics such as playtime and game difficulty were gathered from Metacritics sourced by GameFAQs, a well-known repository for game guides, FAQs, and user-submitted content. These data points were extracted using Selenium, a powerful web scraping library that automates browser interactions for dynamic content extraction.
 <br>
 Last but not least, important metrics related to player activity, including the number of concurrent players and real-time viewer counts, were manually downloaded from SteamDB, a platform that tracks game statistics on Steam. Together, these data sources offer a rich foundation for analyzing game performance, user engagement, and sentiment trends. <br>
