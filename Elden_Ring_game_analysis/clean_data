@@ -1,0 +1,66 @@
+## language detection
+#!pip install langdetect
+
+import pandas as pd
+from langdetect import detect
+
+def clean_meta(df, 
+               drop_na=True,
+               drop_duplicated=True,
+               drop_spoiler=True,
+               all_languages=False,
+               selected_languages=['en']):
+  
+  # drop na values
+  if drop_na:
+    df.dropna(inplace=True)
+  
+  # drop duplicates
+  if drop_duplicated:
+    df.drop_duplicates(inplace=True)
+
+  # some comments include spoiling so they viewed as "[SPOILER ALERT: This review contains spoilers.]"
+  if drop_spoiler:  
+    df = df[df['review_text'] != "[SPOILER ALERT: This review contains spoilers.]"]
+
+  # filter comments to their languages
+  if all_languages:
+    pass
+  else:
+    langs = []
+    for r in df['review_text']:
+      try:
+        langs.append(detect(r))
+      except:
+        langs.append('unknown')
+    df['language'] = langs
+    df = df[df['language'].isin(selected_languages)]
+  
+  # removing language column in case there is all or only one language (not necessary in this case)
+  if len(selected_languages) <= 1:
+    df.drop(columns=['language'], inplace=True)
+
+  return df
+
+def clean_retirements(df):
+  
+  # dealing with platforms
+  df['platforms'].replace("Linux", "PC")
+
+  # dealing with playtimes
+  def convert_to_hours(play_time):
+    play_time = str(play_time)
+    play_time = play_time.replace('½', '') 
+  
+    if 'Hours' in play_time:
+      return int(play_time.split(" ")[0])
+    elif 'Mins' in play_time:
+      return int(play_time.split(" ")[0]) / 60
+    else:
+      return 0
+  df['playtimes'] = df['playtimes'].apply(convert_to_hours)
+
+  df.dropna(inplace=True)
+  df.drop_duplicates(inplace=True)
+
+  return df
