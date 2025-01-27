@@ -27,4 +27,18 @@ represents number of players in each playing status categories. <br>
 <br>
 represents number of players in each playtie section <br>
 **faq_ratings:**
-represents number of players according to ratings
+<br>
+represents number of players according to ratings <br>
+**single_player_playtime:**
+<br>
+playtime data of players for singleplayer <br>
+**speedrunner_playtime:**
+<br>
+playtime data of players for speedrunner <br>
+**multiplayer_playtime:**
+<br>
+playtime data of players for multiplayer <br>
+**retirement_reasons:**
+<br>
+reviews of players about their reasons to drop game <br>
+ 
