@@ -196,3 +196,76 @@ desired_data = ['df_ratings_stats', 'df_playtime_stats', 'df_difficulty', 'df_pl
 faq_data = scrape_gamefaq()
 for i in range(len(desired_data)):
   faq_data[i].to_csv(f'faq_{desired_data[i][3:]}.csv', index=False)
+
+def scrape_howlongtobeat(game_id,
+                         user_agent_string='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'):
+  base_url = f'https://howlongtobeat.com/game/{game_id}' #base url
+  driver = web_driver(user_agent_string) #initialize webscraping
+  driver.get(base_url) #load html of webpage
+  time.sleep(5)
+
+  def extract_table(num_last_div): #by entering last div number can extract desired table 
+    columns1 = []
+    for i in range(10000):
+      try:
+        columns1.append(driver.find_element(By.XPATH, f"/html/body/div[1]/div/main/div[2]/div/div[2]/div[{str(num_last_div)}]/table/thead/tr/td[{str(i+1)}]").text)
+      except:
+        break
+    table_full1 = []
+    for i in range(10000):
+      try:
+        table_full1.append(driver.find_element(By.XPATH, f"/html/body/div[1]/div/main/div[2]/div/div[2]/div[{str(num_last_div)}]/table/tbody/tr[{str(i+1)}]").text)
+      except:
+        break
+    num_rows1 = len(table_full1)
+
+    data1 = {c: [] for c in columns1}
+    for j in range(num_rows1):
+      for i in range(len(columns1)):
+        try:
+          data1[columns1[i]].append(driver.find_element(By.XPATH, f"/html/body/div[1]/div/main/div[2]/div/div[2]/div[{str(num_last_div)}]/table/tbody/tr[{str(j+1)}]/td[{str(i+1)}]").text)
+        except:
+          data1[columns1[i]].append(None)
+
+    return data1
+  table1 = extract_table(7)
+  table2 = extract_table(8)
+  table3 = extract_table(9)
+
+  #retirements report data
+  retirements_url = base_url + "/lists#retirement"
+  driver.get(retirements_url)
+  time.sleep(5)
+
+  usernames = []
+  platforms = []
+  playtimes = []
+  retirement_reasons = []
+  for i in range(1, 141):
+    try:
+      usernames.append(driver.find_element(By.XPATH, f"/html/body/div[1]/div/main/div[2]/div/div[2]/div[5]/div/article[{str(i)}]/div[2]/h4/a").text)
+    except:
+      usernames.append(None)
+    try:
+      platforms.append(driver.find_element(By.XPATH, f"/html/body/div[1]/div/main/div[2]/div/div[2]/div[5]/div/article[{str(i)}]/div[2]/span[1]").text)
+    except:
+      platforms.append(None)
+    try:
+      playtimes.append(driver.find_element(By.XPATH, f"/html/body/div[1]/div/main/div[2]/div/div[2]/div[5]/div/article[{str(i)}]/div[2]/span[2]").text)
+    except:
+      playtimes.append(None)
+    try:
+      retirement_reasons.append(driver.find_element(By.XPATH, f"/html/body/div[1]/div/main/div[2]/div/div[2]/div[5]/div/article[{str(i)}]/div[2]/div").text)
+    except:
+      retirement_reasons.append(None)
+
+  driver.quit()
+  
+  table4 = {
+          'usernames': usernames,
+          'platforms': platforms,
+          'playtimes': playtimes,
+          'retirement_reasons': retirement_reasons
+  }
+
+  return table1, table2, table3, table4
