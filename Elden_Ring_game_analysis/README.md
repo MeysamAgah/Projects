@@ -14,3 +14,15 @@ Additionally, supplementary statistics such as playtime and game difficulty were
 <br>
 Last but not least, important metrics related to player activity, including the number of concurrent players and real-time viewer counts, were manually downloaded from SteamDB, a platform that tracks game statistics on Steam. Together, these data sources offer a rich foundation for analyzing game performance, user engagement, and sentiment trends. <br>
 Further information about data used in this survey follow this [link](https://github.com/MeysamAgah/Projects/blob/main/Elden_Ring_game_analysis/Data/README.md) to data folder readme
+<br>
+# Data Cleaning
+This step consist of cleaning two dataframes of reviews
+1. **Metacritic comments:** <br>
+1.1 for this dataset missing values removed<br>
+   1.2 duplicated rows removed<br>
+   1.3 rows containing spoiler (in other word "[SPOILER ALERT: This review contains spoilers.]") were removed<br>
+   1.4 and last but not least data filtered to only english comments<br>
+2. **Retirement reasons:** <br>
+1.1 values representing Linux in platforms column replaced by PC<br>
+   1.2 all values in playtimes column cleaned up<br>
+   1.3 missing values and duplicated rows were removed
