@@ -23,6 +23,9 @@ This step consist of cleaning two dataframes of reviews
    1.3 rows containing spoiler (in other word "[SPOILER ALERT: This review contains spoilers.]") were removed<br>
    1.4 and last but not least data filtered to only english comments<br>
 2. **Retirement reasons:** <br>
-1.1 values representing Linux in platforms column replaced by PC<br>
-   1.2 all values in playtimes column cleaned up<br>
-   1.3 missing values and duplicated rows were removed
+2.1 values representing Linux in platforms column replaced by PC<br>
+   2.2 all values in playtimes column cleaned up<br>
+   2.3 missing values and duplicated rows were removed
+
+# Aspect Extraction
+To extract all aspects from the reviews, I utilized the pre-trained model [InstructABSA](https://github.com/kevinscaria/InstructABSA) , which is a state-of-the-art model for Aspect-Based Sentiment Analysis tasks. The implemented function identifies aspects in each review and stores them in a list.
