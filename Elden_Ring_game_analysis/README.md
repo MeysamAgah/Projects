@@ -28,4 +28,4 @@ This step consist of cleaning two dataframes of reviews
    2.3 missing values and duplicated rows were removed
 
 # Aspect Extraction
-To extract all aspects from the reviews, I utilized the pre-trained model [InstructABSA](https://github.com/kevinscaria/InstructABSA) , which is a state-of-the-art model for Aspect-Based Sentiment Analysis tasks. The implemented function identifies aspects in each review and stores them in a list.
+To extract all aspects from the reviews, I utilized the pre-trained model [InstructABSA](https://github.com/kevinscaria/InstructABSA) , which is a state-of-the-art model for Aspect-Based Sentiment Analysis tasks. The implemented function identifies aspects in each review and stores them in a new column.
