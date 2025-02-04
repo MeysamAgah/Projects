@@ -20,6 +20,9 @@ metacritic reviews containing whether review is by user or critic, date of revie
 **Elden_Ring_metacritic_reviews_cleaned:**
 <br>
 cleaned version of previously Elden_Ring_metacritic_reviews <br>
+**Elden_Ring_metacritic_reviews_absa:**
+<br>
+added aspects extracted by InstructABSA to Elden_Ring_metacritic_reviews_cleaned <br>
 **faq_difficulty:**
 <br>
 represents number of votes for each difficulty level.<br>
