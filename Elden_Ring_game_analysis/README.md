@@ -28,4 +28,11 @@ This step consist of cleaning two dataframes of reviews
    2.3 missing values and duplicated rows were removed
 
 # Aspect Extraction
-To extract all aspects from the reviews, I utilized the pre-trained model [InstructABSA](https://github.com/kevinscaria/InstructABSA) , which is a state-of-the-art model for Aspect-Based Sentiment Analysis tasks. The implemented function identifies aspects in each review and stores them in a new column.
+To extract all aspects from the reviews, I utilized the pre-trained model [InstructABSA](https://github.com/kevinscaria/InstructABSA) , which is a state-of-the-art model for Aspect-Based Sentiment Analysis tasks. The implemented function identifies aspects in each review and stores them in a new column.<br>
+then I gathered all aspects whether positive or negative in a list for further steps.
+
+# Aspect Categorization
+In this step we first fine tune a Modern BERT model by training on video gaming paragraphs extracted from gamespot reviews.<br>
+then I vectorize every aspectleveraging fine tuned Modern BERT.<br>
+then I use Kmeans to cluster these aspects and find categories. most frequent aspect in each cluster will be cluster representative and will be category name<br>
+finally by counting number of positives and negatives in each category we can analyze game by category
