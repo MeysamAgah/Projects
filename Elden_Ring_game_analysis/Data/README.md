@@ -50,4 +50,7 @@ reviews of players about their reasons to drop game <br>
 **retirement_reasons:**
 <br>
 cleaned version of previously retirement_reasons <br>
+**docs:**
+<br>
+contains document about game reviews <br>
  
