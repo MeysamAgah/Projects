@@ -32,7 +32,7 @@ To extract all aspects from the reviews, I utilized the pre-trained model [Instr
 then I gathered all aspects whether positive or negative in a list for further steps.
 
 # Aspect Categorization
-In this step we first fine tune a Modern BERT model by training on video gaming paragraphs extracted from gamespot reviews.<br>
-then I vectorize every aspectleveraging fine tuned Modern BERT.<br>
+In this step we first fine tune a Glove text model by training on video gaming paragraphs extracted from gamespot reviews.<br>
+then I vectorize every aspectleveraging fine tuned Glove text.<br>
 then I use Kmeans to cluster these aspects and find categories. most frequent aspect in each cluster will be cluster representative and will be category name<br>
 finally by counting number of positives and negatives in each category we can analyze game by category
