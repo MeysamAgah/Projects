@@ -1,7 +1,3 @@
-# installs
-!pip install selenium
-!apt-get install chromium-driver
-
 # imports
 from selenium import webdriver
 from selenium.webdriver.common.by import By
