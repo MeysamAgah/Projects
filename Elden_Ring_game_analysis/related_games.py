@@ -23,3 +23,25 @@ def related_games(game):
   driver.quit()
   
   return related_games
+
+def game_platforms(game):
+  """
+  input:
+    - game name
+  output:
+    - list of game platforms
+  """
+  driver = web_driver()
+  url = f"https://www.metacritic.com/game/{game}/"
+  driver.get(url)
+
+  platforms = []
+  a = driver.find_elements(By.CLASS_NAME, "c-gamePlatformTile")
+  for e in a:
+    platform = e.get_attribute('href').split('platform=')[-1]
+    if platform not in platforms:
+      platforms.append(platform)
+  
+  driver.quit()
+  
+  return platforms
