@@ -23,7 +23,8 @@ def web_driver(user_agent_string):
     driver = webdriver.Chrome(options=options)
     return driver
 
-def scrape_metacritic(platform, 
+def scrape_metacritic(platform,
+                      game = "elden-ring"
                       reviewer="user", 
                       num_comments=50,
                       user_agent_string = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'):
@@ -40,7 +41,7 @@ def scrape_metacritic(platform,
   """
   driver = web_driver(user_agent_string) #initializing webscrapping
 
-  url = f"https://www.metacritic.com/game/elden-ring/{reviewer}-reviews/?platform={platform}" # forming up url according to inputs
+  url = f"https://www.metacritic.com/game/{game}/{reviewer}-reviews/?platform={platform}" # forming up url according to inputs
   driver.get(url) # loading html of url
   time.sleep(5) # Wait for initial page load
 
