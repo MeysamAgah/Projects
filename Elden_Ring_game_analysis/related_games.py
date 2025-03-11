@@ -44,16 +44,19 @@ def game_platforms(game):
     - list of game platforms
   """
   driver = web_driver()
-  url = f"https://www.metacritic.com/game/{game}/"
+  url = f"https://www.metacritic.com/game/{game}/user-reviews/"
   driver.get(url)
 
-  platforms = []
-  a = driver.find_elements(By.CLASS_NAME, "c-gamePlatformTile")
-  for e in a:
-    platform = e.get_attribute('href').split('platform=')[-1]
-    if platform not in platforms:
-      platforms.append(platform)
+  time.sleep(5)
+  
+  platforms = driver.find_element(By.CLASS_NAME, "c-siteDropdown_choice").text.split('\n')
+  
+  corrected_platforms = []
+  for p in platforms:
+    p = p.lower()
+    p = p.replace(' ', '-')
+    corrected_platforms.append(p)
 
   driver.quit()
 
-  return platforms
+  return corrected_platforms
