@@ -8,6 +8,31 @@ This project aims to perform sentiment analysis on game reviews using pre-traine
 # Data Collection
 For this project, data was collected from multiple sources to provide a comprehensive analysis. User and critic reviews were obtained from Metacritic, a popular website known for aggregating reviews of games, movies, and other media, providing scores from both professional critics and general users. This platform serves as a key resource for evaluating public sentiment and critical reception.
 <br>
+also comments for some related games extracted to fine tune a language model on gaming comments.
+These related games are:<br>
+'elden-ring-shadow-of-the-erdtree',
+ 'diablo',
+ 'mass-effect-3',
+ 'final-fantasy-vii-rebirth',
+ 'xenoblade-chronicles-3-expansion-pass-wave-4',
+ 'bloodborne',
+ 'vagrant-story',
+ 'the-witcher-3-wild-hunt',
+ 'demons-souls',
+ 'the-witcher-3-wild-hunt-blood-and-wine',
+ 'nier-automata-game-of-the-yorha-edition',
+ 'dark-souls-ii',
+ 'diablo-iii-ultimate-evil-edition',
+ 'nier-automata-become-as-gods-edition',
+ 'monster-hunter-world',
+ 'freedom-force',
+ 'the-witcher-3-wild-hunt-hearts-of-stone',
+ 'xenoblade-chronicles-definitive-edition',
+ 'monster-hunter-world-iceborne',
+ 'monster-hunter-wilds',
+ 'demons-souls-2009',
+ 'fable-ii'
+<br>
 Furthermore, some data about details on how much elden ring was played gathered from [howlongtobeat.com](https://howlongtobeat.com). this data contains some tabular playtime data and some comments from players who dropped the game early.
 <br>
 Additionally, supplementary statistics such as playtime and game difficulty were gathered from Metacritics sourced by GameFAQs, a well-known repository for game guides, FAQs, and user-submitted content. These data points were extracted using Selenium, a powerful web scraping library that automates browser interactions for dynamic content extraction.
